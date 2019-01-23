@@ -125,3 +125,97 @@ function getGold(size){
 return arr;
 }
 console.log(getGold(10));
+
+
+
+
+
+
+function largestOfFour(arr) {
+  var newArr = [];
+  for (i=0; i<arr.length; i++) {
+   var largest=0;
+    for (j=0; j<arr[i].length; j++) {
+      if (arr[i][j] + arr[i][j] < largest) {
+        largest = arr[i][j];
+      }
+    }
+    newArr.push(largest);
+  }
+  // You can do this!
+  return newArr;
+}
+
+
+// // O(n^2) time
+const twoSum = (arr, target) => {
+ //sortLeast(arr);
+
+  let results = [];
+  for (let i=0; i<arr.length; i++) {
+    for (let j=i+1; j<arr.length; j++) {
+      if (arr[j] === target - arr[i]) {
+        results.push([arr[i], arr[j]]);
+      }
+      else if(target > arr[j] + arr[i]){
+    
+
+        results.push([arr[i], arr[j]]);
+    
+      }
+    
+    }
+  }
+      let x=largestOfFour(results);
+  return x;
+}
+const arr = [7, 0, -4, 2, 0];
+
+console.log(twoSum(arr, 5)); // [[0, 5], [2, 3]]
+
+// function getGold(size){
+//    const array = [8,2,1000,2,2,0];
+  
+//    sortLeast(array);
+  
+
+//    let arr=[];
+   
+  
+    
+//    for (let i=0; i<arr.length; i++){
+//     let result=size-array[i];
+//     let n = array.includes(result);
+//     if(n){
+//      arr.push(result,array[i]);
+//     }
+//     else if(!n){
+//       result--;
+//        arr.push(result,array[i]);
+//     }
+      
+      
+//  }   
+//     //result.push(weights[i]);
+ 
+
+// return arr;
+// }
+// console.log(getGold(10));
+// (function (exports) {
+//   'use strict';
+//  function maxSubarray(array) {
+//     var currentMax = 0;
+//     var max = 0;
+//     var result=[];
+//     for (var i = 0; i < array.length; i += 1) {
+//       currentMax = Math.max(0, currentMax + array[i]);
+//       max = Math.max(max, currentMax);
+//       result+=max;
+//     }
+//     return result;
+//   }
+//   exports.maxSubarray = maxSubarray;
+// })(typeof window === 'undefined' ? module.exports : window);
+
+// console.log(maxSubarray([10,9,1000,12,-11,3]));
